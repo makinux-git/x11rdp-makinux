@@ -1,0 +1,6 @@
+#!/bin/bash
+workingdir=`pwd`
+tar -xvf $workingdir/packages.tar.gz
+DEBIAN_FRONTEND=noninteractive dpkg -i $workingdir/cache/*.deb
+sh $workingdir/X11rdp-o-matic.sh --nocleanup --reuse --justdoit
+sh $workingdir/RDPsesconfig.sh
